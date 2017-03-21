@@ -1,4 +1,6 @@
-<%@ page import="java.sql.*" %><%--
+<%@ page import="java.sql.*" %>
+<%@ page import="com.user.User" %>
+<%@ page import="com.dao.SelectDao" %><%--
   Created by IntelliJ IDEA.
   User: ASUS
   Date: 2017/3/13
@@ -12,54 +14,27 @@
 </head>
 <body>
 
-<%!
-    public static final String DRIVER = "com.mysql.jdbc.Driver";
-    public static final String URL = "jdbc:mysql://localhost:3306/jspclass?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=false&serverTimezone=UTC&autoReconnect=true&useSSL=false";
-    public static final String USERNAME = "root";
-    public static final String PASSWORD = "1234";
-%>
-
 <%
 
-    request.setCharacterEncoding("utf-8");
-    String id = request.getParameter("id");
-    try {
-        Class.forName(DRIVER);
-        Connection connection = DriverManager.getConnection(URL, USERNAME, PASSWORD);
-        //language=SQL
-        String sql = "select * from jspclass.user WHERE id=?;";
-
-        PreparedStatement ps = connection.prepareStatement(sql);
-        ps.setString(1, id);
-        ResultSet set = ps.executeQuery();
-
-        if (set.next()) {
+    User user = new User();
+    SelectDao selectDao = new SelectDao();
+    user=selectDao.selectUser(user);
 %>
 
-<form action="doModifiy.jsp?id=<%=set.getInt("id")%>" method="post">
-    <input type="text" value="<%=set.getString("username")%>" name="username">
-    <input type="password" value="<%=set.getString("password")%>" name="password">
-    <select name="type">
-        <option value="管理员">管理员</option>
-        <option value="普通用户">普通用户</option>
-    </select>
 
-    <input type="submit" value="提交">
-    <input type="reset" value="清空">
+<form action="doModifiy.jsp?id=<%=user.getId()%>">
+    <table>
+        <tr>
+            <td><input type="text" value="<%=user.getUsername()%>"></td>
+            <td><input type="text" value="<%=user.getPassword()%>"></td>
+            <td><select name="用户类型">
+                <option value= "管理员">管理员</option>
+                <option value= "普通用户">普通用户</option>
+            </select></td>
+            <td><input type="submit" value="提交"></td>
+        </tr>
+    </table>
 </form>
 
-<%
-            set.close();
-            ps.close();
-            connection.close();
-        } else {
-            out.println("没有找到该用户");
-        }
-
-
-    } catch (SQLException e) {
-        e.printStackTrace();
-    }
-%>
 </body>
 </html>
