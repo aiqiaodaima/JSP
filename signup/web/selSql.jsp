@@ -38,7 +38,7 @@
         </td>
         <td><%=user.getType()%>
         </td>
-        <td><a href="doDelete.jsp">删除 &nbsp;</a></td>
+        <td><a href="doDelete.jsp?id=<%=user.getId()%>">删除 &nbsp;</a><a href="doFindInfo.jsp?id=<%=user.getId()%>">修改 </a></td>
     </tr>
 
 

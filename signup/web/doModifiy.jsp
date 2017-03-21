@@ -19,9 +19,7 @@
 <body>
 
 
-
 <%
-
     User user = new User();
     user.setId(request.getParameter("id"));
     user.setUsername(request.getParameter("username"));
