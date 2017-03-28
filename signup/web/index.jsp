@@ -33,6 +33,6 @@
     </select>
     <input type="submit" value="确认">
 </form>
-<a href="selSql.jsp">查看所有用户</a>
+<a href="limltsel.jsp">查看所有用户</a>
 </body>
 </html>

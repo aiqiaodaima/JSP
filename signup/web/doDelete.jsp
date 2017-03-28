@@ -1,8 +1,5 @@
-<%@ page import="java.sql.Connection" %>
-<%@ page import="java.sql.DriverManager" %>
-<%@ page import="java.sql.PreparedStatement" %>
-<%@ page import="com.user.User" %>
 <%@ page import="com.dao.DelectDao" %>
+<%@ page import="com.user.User" %>
 <%--
   Created by IntelliJ IDEA.
   User: ASUS

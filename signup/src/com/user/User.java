@@ -9,6 +9,9 @@ public class User {
     private String password;
     private String type;
 
+    public static final int PAGE=2;
+
+
     public String getId() {
         return id;
     }

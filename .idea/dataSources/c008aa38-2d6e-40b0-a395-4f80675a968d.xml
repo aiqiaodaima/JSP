@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dataSource name="SmartClass@localhost">
-  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.0">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.1">
     <root id="1"/>
     <schema id="2" parent="1" name="smartclass">
       <Current>1</Current>
@@ -45,6 +45,7 @@
       <NotNull>1</NotNull>
     </column>
     <key id="20" parent="13" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
       <ColNames>Sid</ColNames>
       <Primary>1</Primary>
     </key>
@@ -69,6 +70,7 @@
       <NotNull>1</NotNull>
     </column>
     <key id="25" parent="14" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
       <ColNames>Tid</ColNames>
       <Primary>1</Primary>
     </key>

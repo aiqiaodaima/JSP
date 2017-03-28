@@ -1,6 +1,6 @@
-<%@ page import="java.sql.*" %>
+<%@ page import="com.dao.SelectDao" %>
 <%@ page import="com.user.User" %>
-<%@ page import="com.dao.SelectDao" %><%--
+<%--
   Created by IntelliJ IDEA.
   User: ASUS
   Date: 2017/3/13

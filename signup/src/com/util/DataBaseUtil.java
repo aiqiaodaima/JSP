@@ -1,7 +1,5 @@
 package com.util;
 
-import sun.net.ConnectionResetException;
-
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
