@@ -2,6 +2,7 @@
 <%@ page import="com.user.User" %>
 <%@ page import="java.util.Iterator" %>
 <%@ page import="java.util.List" %>
+<%@ page import="java.sql.Connection" %>
 <%--
   Created by IntelliJ IDEA.
   User: ASUS
